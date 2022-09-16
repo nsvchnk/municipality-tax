@@ -1,0 +1,20 @@
+spring:
+  flyway:
+    locations: classpath:db/migration
+    schemas: municipality-tax
+    default-schema: municipality-tax
+  datasource:
+    username: root
+    password: root
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+  jpa:
+    database: H2
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-admin-password: root
+
