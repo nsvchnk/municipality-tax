@@ -17,4 +17,3 @@ spring:
       enabled: true
       settings:
         web-admin-password: root
-
