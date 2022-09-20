@@ -27,6 +27,8 @@
         <junit.version>4.13.2</junit.version>
         <mockito.version>4.8.0</mockito.version>
         <spring.beans.version>5.3.23</spring.beans.version>
+        <querydsl.version>5.0.0</querydsl.version>
+        <apt.maven.version>1.1.3</apt.maven.version>
     </properties>
 
     <dependencyManagement>

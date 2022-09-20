@@ -1,15 +1,10 @@
 package com.testapp.municipalitytax.web;
 
-import com.testapp.municipalitytax.web.payload.AddTaxRequest;
-import com.testapp.municipalitytax.web.payload.FullTaxInfo;
-import com.testapp.municipalitytax.web.payload.TaxResponse;
-import com.testapp.municipalitytax.web.payload.UUIDResponse;
-
-import java.util.List;
+import com.testapp.municipalitytax.web.payload.*;
 
 public interface TaxesService {
     UUIDResponse addTax(AddTaxRequest addTaxRequest);
-    TaxResponse findTax(String municipality, String startDate);
+    TaxResponse findTax(String municipality, String date);
 
-    List<FullTaxInfo> getAllMunicipalityTaxes();
+    TaxListResponse getAllMunicipalityTaxes();
 }

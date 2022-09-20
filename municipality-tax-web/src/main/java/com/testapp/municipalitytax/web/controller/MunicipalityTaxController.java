@@ -1,19 +1,9 @@
 package com.testapp.municipalitytax.web.controller;
 
 import com.testapp.municipalitytax.web.TaxesService;
-import com.testapp.municipalitytax.web.payload.AddTaxRequest;
-import com.testapp.municipalitytax.web.payload.FullTaxInfo;
-import com.testapp.municipalitytax.web.payload.TaxResponse;
-import com.testapp.municipalitytax.web.payload.UUIDResponse;
+import com.testapp.municipalitytax.web.payload.*;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/taxes")
@@ -45,7 +35,7 @@ public class MunicipalityTaxController {
      * Find municipality tax record by municipality and date
      *
      * @param municipality case sensitive
-     * @param startDate formatted yyyy.mm.dd
+     * @param date formatted yyyy.mm.dd
      *
      * @return TaxResponse list of taxes applied with chosen municipality and date
      */
@@ -53,8 +43,8 @@ public class MunicipalityTaxController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     TaxResponse findMunicipalityTax(@PathVariable("municipality") String municipality,
-                                                         @PathVariable("date") String startDate){
-        return taxesService.findTax(municipality, startDate);
+                                                         @PathVariable("date") String date){
+        return taxesService.findTax(municipality, date);
     }
 
     /**
@@ -66,7 +56,7 @@ public class MunicipalityTaxController {
     @GetMapping(value = "/all")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    List<FullTaxInfo> getAllMunicipalityTaxes(){
+    TaxListResponse getAllMunicipalityTaxes(){
         return taxesService.getAllMunicipalityTaxes();
     }
 
