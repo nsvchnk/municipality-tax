@@ -6,7 +6,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "taxes")
-public class TaxesEntity {
+public class TaxEntity {
 
     @Id
     @Column(name = "id", updatable = false)
@@ -25,11 +25,11 @@ public class TaxesEntity {
     @Column(name = "end_date")
     private LocalDate endDate;
 
-    protected TaxesEntity() {
+    protected TaxEntity() {
         // JPA constructor
     }
 
-    public TaxesEntity(UUID id, String municipality, Double tax, LocalDate startDate, LocalDate endDate) {
+    public TaxEntity(UUID id, String municipality, Double tax, LocalDate startDate, LocalDate endDate) {
         this.id = id;
         this.municipality = municipality;
         this.tax = tax;
@@ -42,7 +42,7 @@ public class TaxesEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TaxesEntity taxes = (TaxesEntity) o;
+        TaxEntity taxes = (TaxEntity) o;
 
         return id.equals(taxes.id);
     }
