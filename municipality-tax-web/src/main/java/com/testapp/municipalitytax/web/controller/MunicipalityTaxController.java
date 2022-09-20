@@ -20,6 +20,9 @@ public class MunicipalityTaxController {
      * Adds new municipality tax record
      *
      * @param addTaxRequest body
+     *       municipality is case-sensitive
+     *       schedule is case-insensitive
+     *       date is accepted in format yyyy.mm.dd
      *
      * @return UUID of created record
      */
@@ -34,8 +37,8 @@ public class MunicipalityTaxController {
      *
      * Find municipality tax record by municipality and date
      *
-     * @param municipality case sensitive
-     * @param date formatted yyyy.mm.dd
+     * @param municipality case-sensitive
+     * @param date accepted in format yyyy.mm.dd
      *
      * @return TaxResponse list of taxes applied with chosen municipality and date
      */
