@@ -1,13 +1,13 @@
 package com.testapp.municipalitytax;
 
-//import org.junit.jupiter.api.Test;
-//import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-//@SpringBootTest
-class MainTests {
+@SpringBootTest
+public class MainTests {
 
-//    @Test
-    void contextLoads() {
+    @Test
+    public void contextLoads() {
     }
 
 }

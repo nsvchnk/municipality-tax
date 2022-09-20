@@ -5,10 +5,10 @@ municipality-tax-main:
 
 municipality-tax-web:
 - REST controllers
+- request and response payloads
 
 municipality-tax-domain:
 - service and domain
-- repo interface
 
 municipality-tax-jpa:
 - repositories and entity

@@ -16,11 +16,17 @@
     </modules>
 
     <properties>
+        <project.version>1.0-SNAPSHOT</project.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>17</java.version>
+        <h2.version>2.1.214</h2.version>
+        <flyway.version>9.3.0</flyway.version>
         <spring.version>2.7.3</spring.version>
-        <project.version>1.0-SNAPSHOT</project.version>
+        <junit.version>4.13.2</junit.version>
+        <mockito.version>4.8.0</mockito.version>
+        <spring.beans.version>5.3.23</spring.beans.version>
     </properties>
 
     <dependencyManagement>
@@ -76,8 +82,16 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 </project>
