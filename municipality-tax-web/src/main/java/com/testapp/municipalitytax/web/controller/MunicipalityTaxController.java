@@ -5,6 +5,8 @@ import com.testapp.municipalitytax.web.payload.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/taxes")
 public class MunicipalityTaxController {
@@ -23,13 +25,14 @@ public class MunicipalityTaxController {
      *       municipality is case-sensitive
      *       schedule is case-insensitive
      *       date is accepted in format yyyy.mm.dd
+     *       tax is between 0 and 1
      *
      * @return UUID of created record
      */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
-    UUIDResponse addMunicipalityTax(@RequestBody AddTaxRequest addTaxRequest){
+    UUIDResponse addMunicipalityTax(@Valid @RequestBody AddTaxRequest addTaxRequest){
         return taxesService.addTax(addTaxRequest);
     }
 
@@ -46,7 +49,7 @@ public class MunicipalityTaxController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     TaxResponse findMunicipalityTax(@PathVariable("municipality") String municipality,
-                                                         @PathVariable("date") String date){
+                                    @PathVariable("date") String date){
         return taxesService.findTax(municipality, date);
     }
 

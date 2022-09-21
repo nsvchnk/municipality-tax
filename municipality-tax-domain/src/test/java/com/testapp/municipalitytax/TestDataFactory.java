@@ -19,11 +19,11 @@ public class TestDataFactory {
     public static final String municipality = "Municipality";
     public static final LocalDate date = LocalDate.now();
     public static final String stringDate = date.format(formatter);
-    public static final Schedule schedule = new Schedule(Schedule.ScheduleType.DAILY);
+    public static final Schedule schedule = Schedule.DAILY;
     public static final Double tax = 1D;
 
     public static AddTaxRequest createAddTaxRequest(){
-        return new AddTaxRequest(municipality, tax, stringDate, schedule.value());
+        return new AddTaxRequest(municipality, tax, stringDate, schedule.name());
     }
 
     public static MunicipalityTax createMunicipalityTax(){
@@ -39,7 +39,7 @@ public class TestDataFactory {
     }
 
     public static FullTaxInfo createFullTaxInfo(){
-        return new FullTaxInfo(id, municipality, tax, date, schedule.value());
+        return new FullTaxInfo(id, municipality, tax, date, schedule.name());
     }
 
     public static TaxListResponse createTaxListResponse(){

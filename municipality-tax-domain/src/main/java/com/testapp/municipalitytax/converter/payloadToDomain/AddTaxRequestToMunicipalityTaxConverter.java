@@ -21,6 +21,6 @@ public class AddTaxRequestToMunicipalityTaxConverter implements Converter<AddTax
                 source.municipality(),
                 source.tax(),
                 LocalDate.parse(source.startDate(), formatter),
-                new Schedule(source.schedule()));
+                Schedule.valueOf(source.schedule().toUpperCase()));
     }
 }

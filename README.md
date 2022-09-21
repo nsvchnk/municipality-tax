@@ -8,7 +8,7 @@ municipality-tax-web:
 - request and response payloads
 
 municipality-tax-domain:
-- service and domain
+- service and domain objects
 
 municipality-tax-jpa:
 - repositories and entity

@@ -24,13 +24,13 @@ public class TaxEntityToMunicipalityTaxConverter implements Converter<TaxEntity,
 
     private Schedule dateToSchedule(LocalDate startDate, LocalDate endDate){
         if (DAYS.between(startDate, endDate) <= 1){
-            return new Schedule(Schedule.ScheduleType.DAILY);
+            return Schedule.DAILY;
         } else if (WEEKS.between(startDate, endDate) <= 1){
-            return new Schedule(Schedule.ScheduleType.WEEKLY);
+            return Schedule.WEEKLY;
         } else if (MONTHS.between(startDate, endDate) <= 1){
-            return new Schedule(Schedule.ScheduleType.MONTHLY);
+            return Schedule.MONTHLY;
         } else {
-            return new Schedule(Schedule.ScheduleType.YEARLY);
+            return Schedule.YEARLY;
         }
     }
 }

@@ -21,7 +21,7 @@ public class MunicipalityTaxToTaxEntityConverter implements Converter<Municipali
     }
 
     private LocalDate scheduleToDate(LocalDate startDate, Schedule schedule){
-        return switch (schedule.type()) {
+        return switch (schedule) {
             case YEARLY -> startDate.plusYears(1).minusDays(1);
             case MONTHLY -> startDate.plusMonths(1).minusDays(1);
             case WEEKLY -> startDate.plusWeeks(1).minusDays(1);

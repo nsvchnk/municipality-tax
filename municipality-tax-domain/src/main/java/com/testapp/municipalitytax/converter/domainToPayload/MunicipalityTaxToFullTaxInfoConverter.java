@@ -14,6 +14,6 @@ public class MunicipalityTaxToFullTaxInfoConverter implements Converter<Municipa
                 source.municipality(),
                 source.tax(),
                 source.startDate(),
-                source.taxSchedule().value());
+                source.taxSchedule().name());
     }
 }

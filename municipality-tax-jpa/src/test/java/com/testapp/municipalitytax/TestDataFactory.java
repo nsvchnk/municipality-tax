@@ -12,7 +12,7 @@ public class TestDataFactory {
     public static final UUID id = UUID.randomUUID();
     public static final String municipality = "Municipality";
     public static final LocalDate date = LocalDate.now();
-    public static final Schedule schedule = new Schedule(Schedule.ScheduleType.DAILY);
+    public static final Schedule schedule = Schedule.DAILY;
     public static final Double tax = 1D;
 
     public static MunicipalityTax createMunicipalityTax(){
@@ -28,19 +28,19 @@ public class TestDataFactory {
     }
 
     public static MunicipalityTax createYearlyMunicipalityTax(){
-        return new MunicipalityTax(id, municipality, tax, date, new Schedule(Schedule.ScheduleType.YEARLY));
+        return new MunicipalityTax(id, municipality, tax, date, Schedule.YEARLY);
     }
 
     public static MunicipalityTax createMonthlyMunicipalityTax(){
-        return new MunicipalityTax(id, municipality, tax, date, new Schedule(Schedule.ScheduleType.MONTHLY));
+        return new MunicipalityTax(id, municipality, tax, date, Schedule.MONTHLY);
     }
 
     public static MunicipalityTax createWeeklyMunicipalityTax(){
-        return new MunicipalityTax(id, municipality, tax, date, new Schedule(Schedule.ScheduleType.WEEKLY));
+        return new MunicipalityTax(id, municipality, tax, date, Schedule.WEEKLY);
     }
 
     public static MunicipalityTax createDailyMunicipalityTax(){
-        return new MunicipalityTax(id, municipality, tax, date, new Schedule(Schedule.ScheduleType.DAILY));
+        return new MunicipalityTax(id, municipality, tax, date, Schedule.DAILY);
     }
 
     public static TaxEntity createYearlyTaxEntity(){
