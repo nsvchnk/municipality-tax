@@ -27,5 +27,37 @@ public class TestDataFactory {
         return new TaxEntity(id, municipality, tax, date, date);
     }
 
+    public static MunicipalityTax createYearlyMunicipalityTax(){
+        return new MunicipalityTax(id, municipality, tax, date, new Schedule(Schedule.ScheduleType.YEARLY));
+    }
+
+    public static MunicipalityTax createMonthlyMunicipalityTax(){
+        return new MunicipalityTax(id, municipality, tax, date, new Schedule(Schedule.ScheduleType.MONTHLY));
+    }
+
+    public static MunicipalityTax createWeeklyMunicipalityTax(){
+        return new MunicipalityTax(id, municipality, tax, date, new Schedule(Schedule.ScheduleType.WEEKLY));
+    }
+
+    public static MunicipalityTax createDailyMunicipalityTax(){
+        return new MunicipalityTax(id, municipality, tax, date, new Schedule(Schedule.ScheduleType.DAILY));
+    }
+
+    public static TaxEntity createYearlyTaxEntity(){
+        return new TaxEntity(id, municipality, tax, date, date.plusYears(1).minusDays(1));
+    }
+
+    public static TaxEntity createMonthlyTaxEntity(){
+        return new TaxEntity(id, municipality, tax, date, date.plusMonths(1).minusDays(1));
+    }
+
+    public static TaxEntity createWeeklyTaxEntity(){
+        return new TaxEntity(id, municipality, tax, date, date.plusWeeks(1).minusDays(1));
+    }
+
+    public static TaxEntity createDailyTaxEntity(){
+        return new TaxEntity(id, municipality, tax, date, date);
+    }
+
 
 }
