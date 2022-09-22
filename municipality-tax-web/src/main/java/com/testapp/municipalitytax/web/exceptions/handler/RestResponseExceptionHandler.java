@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import javax.validation.ConstraintViolationException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -25,6 +26,20 @@ public class RestResponseExceptionHandler extends ResponseEntityExceptionHandler
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Unknown error happened");
         logger.log(Level.SEVERE, e.getMessage(), e.getCause());
         return new ResponseEntity<>(errorResponse, errorResponse.status());
+    }
+
+    @ExceptionHandler(value = { ConstraintViolationException.class })
+    protected ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException ex) {
+
+        Map<String, String> errors = new HashMap<>();
+        ex.getConstraintViolations().forEach((violation) -> {
+
+            String fieldName = violation.getInvalidValue().toString();
+            String message = violation.getMessage();
+            logger.log(Level.WARNING, fieldName + " " + message);
+            errors.put(fieldName, message);
+        });
+        return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
 
     @Override

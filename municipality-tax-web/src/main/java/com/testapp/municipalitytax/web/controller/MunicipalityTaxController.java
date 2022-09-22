@@ -2,13 +2,16 @@ package com.testapp.municipalitytax.web.controller;
 
 import com.testapp.municipalitytax.web.TaxesService;
 import com.testapp.municipalitytax.web.payload.*;
+import com.testapp.municipalitytax.web.validation.DateValidation;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/taxes")
+@Validated
 public class MunicipalityTaxController {
 
     private final TaxesService taxesService;
@@ -49,7 +52,7 @@ public class MunicipalityTaxController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     TaxResponse findMunicipalityTax(@PathVariable("municipality") String municipality,
-                                    @PathVariable("date") String date){
+                                    @PathVariable("date") @DateValidation String date){
         return taxesService.findTax(municipality, date);
     }
 

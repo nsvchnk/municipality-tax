@@ -12,3 +12,7 @@ municipality-tax-domain:
 
 municipality-tax-jpa:
 - repositories and entity
+
+
+Collection link to import to postman:
+https://www.getpostman.com/collections/0b0ed0d155e56305156a
