@@ -5,8 +5,11 @@ import java.util.List;
 
 public interface TaxesRepository {
 
-    MunicipalityTax save(MunicipalityTax municipalityTax);
-    List<MunicipalityTax> findByMunicipalityAndDate(String municipality, LocalDate date);
+  MunicipalityTax save(MunicipalityTax municipalityTax);
 
-    List<MunicipalityTax> getAllMunicipalityTaxes();
+  int update(MunicipalityTax municipalityTax);
+
+  List<MunicipalityTax> findByMunicipalityAndDate(String municipality, LocalDate date);
+
+  List<MunicipalityTax> getAllMunicipalityTaxes();
 }
