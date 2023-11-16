@@ -15,4 +15,4 @@ municipality-tax-jpa:
 
 
 Collection link to import to postman:
-https://www.getpostman.com/collections/0b0ed0d155e56305156a
+https://api.postman.com/collections/3739273-d36c8bdc-c3ef-4876-a302-92689f28d3c3
